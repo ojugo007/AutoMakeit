@@ -3,13 +3,17 @@ import Reveal from "@/components/common/Reveal"
 import { Section } from "@/components/common/Section"
 import { processSteps } from "@/components/sections/Process"
 import CTA from "@/components/sections/CTA"
-import { usePageTitle } from "@/hooks/usePageTitle"
+import Seo from "@/components/common/Seo"
 
 const ProcessPage = () => {
-  usePageTitle("Process")
 
   return (
     <>
+      <Seo
+        title="Our Process"
+        path="/process"
+        description="Our four-stage process: discover, design, build, launch and support. See what happens from first call to a working automation."
+      />
       <PageHeader
         eyebrow="Our process"
         title="From first call to a working system"

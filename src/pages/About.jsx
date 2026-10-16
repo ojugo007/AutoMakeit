@@ -5,7 +5,7 @@ import Reveal from "@/components/common/Reveal"
 import { Section, SectionHeading } from "@/components/common/Section"
 import WhoWeHelp from "@/components/sections/WhoWeHelp"
 import CTA from "@/components/sections/CTA"
-import { usePageTitle } from "@/hooks/usePageTitle"
+import Seo from "@/components/common/Seo"
 
 const values = [
   {
@@ -31,10 +31,13 @@ const values = [
 ]
 
 const About = () => {
-  usePageTitle("About")
-
   return (
     <>
+      <Seo
+        title="About"
+        path="/about"
+        description="Learn how AutoMakeIt Systems helps companies of every size replace repetitive manual work with reliable automations and integrations."
+      />
       <PageHeader
         eyebrow="About us"
         title="We turn repetitive work into systems that run themselves"

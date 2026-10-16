@@ -8,13 +8,25 @@ import FeaturedProjects from "@/components/sections/FeaturedProjects"
 import Testimonials from "@/components/sections/Testimonials"
 import CTA from "@/components/sections/CTA"
 import { Section, SectionHeading } from "@/components/common/Section"
-import { usePageTitle } from "@/hooks/usePageTitle"
+import Seo from "@/components/common/Seo"
+import { SITE_URL, DEFAULT_DESCRIPTION } from "@/lib/seo"
 
 const Home = () => {
-  usePageTitle()
 
   return (
     <>
+      <Seo
+        path="/"
+        jsonLd={{
+          "@context": "https://schema.org",
+          "@type": "Organization",
+          name: "AutoMakeIt Systems",
+          url: SITE_URL,
+          logo: `${SITE_URL}/favicon.svg`,
+          slogan: "Automate. Integrate. Grow.",
+          description: DEFAULT_DESCRIPTION,
+        }}
+      />
       <Hero />
 
       <Section>

@@ -5,7 +5,7 @@ import Reveal from "@/components/common/Reveal"
 import { Section, SectionHeading } from "@/components/common/Section"
 import ServicesGrid from "@/components/sections/ServicesGrid"
 import CTA from "@/components/sections/CTA"
-import { usePageTitle } from "@/hooks/usePageTitle"
+import Seo from "@/components/common/Seo"
 
 const included = [
   "A discovery session to understand your process and tools",
@@ -40,10 +40,14 @@ const faqs = [
 ]
 
 const Services = () => {
-  usePageTitle("Services")
 
   return (
     <>
+      <Seo
+        title="Automation Services"
+        path="/services"
+        description="Workflow automation, system integrations and custom automation built around your business, with support after launch."
+      />
       <PageHeader
         eyebrow="Services"
         title="Automation services built around your business"

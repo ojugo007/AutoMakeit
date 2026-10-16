@@ -17,7 +17,7 @@ import {
   DialogTitle,
 } from "@/components/ui/dialog"
 import { useProjects } from "@/hooks/useSiteData"
-import { usePageTitle } from "@/hooks/usePageTitle"
+import Seo from "@/components/common/Seo"
 
 const Block = ({ label, children }) =>
   children ? (
@@ -30,8 +30,6 @@ const Block = ({ label, children }) =>
   ) : null
 
 const Work = () => {
-  usePageTitle("Our work")
-
   const [selected, setSelected] = useState(null)
   const { data, isLoading, isError, refetch } = useProjects()
 
@@ -39,6 +37,11 @@ const Work = () => {
 
   return (
     <>
+      <Seo
+        title="Our Work"
+        path="/work"
+        description="Case studies of automation projects we've built, the problems they solved and the results they delivered."
+      />
       <PageHeader
         eyebrow="Our work"
         title="Automations in action"

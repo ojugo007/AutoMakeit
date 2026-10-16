@@ -9,7 +9,8 @@ import { Button } from "@/components/ui/button"
 import { Input } from "@/components/ui/input"
 import { Textarea } from "@/components/ui/textarea"
 import { useSendMessage } from "@/hooks/useSiteData"
-import { usePageTitle } from "@/hooks/usePageTitle"
+import Seo from "@/components/common/Seo"
+
 
 const initial = { name: "", email: "", message: "", website: "" }
 
@@ -22,7 +23,6 @@ const next = [
 ]
 
 const Contact = () => {
-  usePageTitle("Contact")
 
   const [values, setValues] = useState(initial)
   const [errors, setErrors] = useState({})
@@ -70,7 +70,7 @@ const Contact = () => {
         onError: (error) => {
           toast.error(
             error.response?.data?.message ||
-              "Something went wrong. Please try again."
+            "Something went wrong. Please try again."
           )
         },
       }
@@ -81,6 +81,11 @@ const Contact = () => {
 
   return (
     <>
+      <Seo
+        title="Contact"
+        path="/contact"
+        description="Tell us about a process that slows your team down and we'll show you what can be automated. Book a free call."
+      />
       <PageHeader
         eyebrow="Contact"
         title="Let's talk about your automation"
